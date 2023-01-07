@@ -7,7 +7,7 @@ public class MainPage {
     public MainPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
-// Элементы главной сраницы сайта
+// Элементы главной страницы сайта
     private final WebDriver webDriver;
 
     // Кнопка заказа в хэдере сайта
@@ -16,7 +16,7 @@ public class MainPage {
     // Кнопка заказа в середине сайта
     private By middleOrderButton = By.className("Button_Button__ra12g Button_Middle__1CSJM");
 
-    // Вопросы о важном, стрелочки вопросов
+    // Раздел "Вопросы о важном", стрелочки вопросов
     private By accordionArrow48 = By.id("accordion__heading-48");
     private By accordionArrow49 = By.id("accordion__heading-49");
     private By accordionArrow50 = By.id("accordion__heading-50");
