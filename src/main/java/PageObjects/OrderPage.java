@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
 
 // Элементы страницы оформления заказа сайта:
 public class OrderPage {
@@ -67,7 +66,7 @@ public class OrderPage {
         return this;
     }
 
-    // Клик по кнопке далее
+    // Клик по кнопке "Далее"
     public OrderPage clickNextButton() {
         driver.findElement(NextButton).click();
         return this;
