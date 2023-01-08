@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class TestSamokatOrdering extends CommonBaseTest {
 
+    // Тест заказа через кнопку в хэдере
     @Test
     public void samokatOrderingByHeaderOrderButton() {
         new MainPage(driver)
@@ -20,8 +21,26 @@ public class TestSamokatOrdering extends CommonBaseTest {
                 .sendDeliveryClientPhoneNumber("83223223322")
                 .clickNextButton();
 
-        new RentPage(driver)
-                .
+//        new RentPage(driver)
+//                .
     }
+    // Тест заказа через кнопку в середине страницы
+    @Test
+    public void samokatOrderingByMiddleOrderButton() {
+        new MainPage(driver)
+                .openSite()
+                .clickCookieButton()
+                .clickMiddleOrderButton();
 
+        new OrderPage(driver)
+                .sendClientFirstName("Арарат")
+                .sendClientLastName("Мкртчян")
+                .sendDeliveryAddress("Москва, Дербеневская, 16")
+                .selectMetroStation("Павелецкая")
+                .sendDeliveryClientPhoneNumber("87776996969")
+                .clickNextButton();
+
+//        new RentPage(driver)
+//                .
+    }
 }

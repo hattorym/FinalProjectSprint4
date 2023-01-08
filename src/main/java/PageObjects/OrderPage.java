@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
@@ -8,18 +9,24 @@ import static org.junit.Assert.assertEquals;
 // Элементы страницы оформления заказа сайта:
 public class OrderPage {
     private final WebDriver driver;
+
     // Локатор поля "Имя"
     private final By clientFirstName = By.xpath(".//input[@placeholder='* Имя']");
+
     // Локатор поля "Фамилия"
     private final By clientLastName = By.xpath(".//input[@placeholder='* Фамилия']");
+
     // Локатор поля "Адрес: куда привезти заказ"
     private final By deliveryAddress = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
+
     // Локатор поля "Станция метро"
     private final By deliveryMetroStation = By.xpath(".//input[@placeholder='* Станция метро']");
+
     // Локатор поля "Телефон: на него позвонит курьер"
     private final By deliveryClientPhoneNumber = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+
     // Локатор кнопки "Далее"
-    private final By NextButton = By.className("Button_Button__ra12g Button_Middle__1CSJM");
+    private final By NextButton = By.xpath(".//button[(@class ='Button_Button__ra12g Button_Middle__1CSJM' and text()='Далее')]");
 
 
     // Конструктор класса
@@ -48,10 +55,9 @@ public class OrderPage {
 
     // Выбор станции метро
     public OrderPage selectMetroStation(String metroStationFromOrder) {
+        driver.findElement(deliveryMetroStation).click();
         driver.findElement(deliveryMetroStation).sendKeys(metroStationFromOrder);
-        String metroStation = driver.findElement(By.xpath("//div[@class='Order_Text__2broi' and text()='" + metroStationFromOrder + "']")).getText();
-        assertEquals(metroStation, metroStationFromOrder);
-        driver.findElement(By.xpath("//div[@class='Order_Text__2broi' and text()='" + metroStationFromOrder + "']")).click();
+        driver.findElement(deliveryMetroStation).sendKeys(Keys.DOWN,Keys.ENTER);
         return this;
     }
 
