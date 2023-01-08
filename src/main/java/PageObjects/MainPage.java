@@ -28,7 +28,7 @@ public class MainPage {
     private By logoYandexHeader = By.className("Header_LogoYandex__3TSOI");
 
     // Лого Самокат в хэдере
-    private By logoScooterHeader = By.className("Header_LogoScooter__3lsAR");
+    private By logoSamokatHeader = By.className("Header_LogoScooter__3lsAR");
 
     // Раздел "Вопросы о важном", массив локаторов стрелочек вопросов
     private String[] accordionArrowsArray = new String[]{
@@ -67,37 +67,43 @@ public class MainPage {
         driver.findElement(headerOrderButton).click();
         return this;
     }
+
     // Кликнуть по кнопке заказа в середине сайта
     public MainPage clickMiddleOrderButton() {
         driver.findElement(middleOrderButton).click();
         return this;
     }
+
     // Кликнуть по кнопке "да все привыкли" сообщения о кукисах
     public MainPage clickCookieButton() {
         driver.findElement(cookieButton).click();
         return this;
     }
+
     // Кликнуть по лого Яндекс в хэдере
     public MainPage clickLogoYandexHeader() {
         driver.findElement(logoYandexHeader).click();
         return this;
     }
+
     // Кликнуть по лого Самокат в хэдере
-    public MainPage clickLogoScooterHeader() {
-        driver.findElement(logoScooterHeader).click();
+    public MainPage clickLogoSamokatHeader() {
+        driver.findElement(logoSamokatHeader).click();
         return this;
     }
+
     // Кликнуть по стрелочке вопросов по списку
     public void clickAccordionArrow(int arrowNumber) {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(By.id(accordionArrowsArray[arrowNumber])));
         driver.findElement(By.id(accordionArrowsArray[arrowNumber])).click();
     }
+
     // Сравнить текст ответа с вопросом
-    public void compareAnswerWithQuestionTextAccordionItemPanel(String accordionQuestionText, int panelNumber) {
+    public void compareAnswerWithQuestionTextAccordionItemPanel(String accordionExpectedText, int panelNumber) {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id(accordionItemPanelArray[panelNumber])));
         String accordionAnswerText = driver.findElement(By.id(accordionItemPanelArray[panelNumber])).getText();
-        assertEquals(accordionQuestionText, accordionAnswerText);
+        assertEquals(accordionExpectedText, accordionAnswerText);
     }
 }
