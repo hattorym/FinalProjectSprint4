@@ -1,11 +1,11 @@
-import PageObjects.MainPage;
-import PageObjects.OrderPage;
-import PageObjects.RentPage;
+import pageObjects.MainPage;
+import pageObjects.OrderPage;
+import pageObjects.RentPage;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestSamokatOrdering extends CommonBaseTest {
+public class SamokatOrderingTest extends CommonBaseTest {
 
     // Тест заказа через кнопку в хэдере
     @Test
@@ -31,7 +31,7 @@ public class TestSamokatOrdering extends CommonBaseTest {
                 .clickOrderButton()
                 .clickOrderButtonYes()
                 .isModalOrderWindowDisplayed();
-        assertTrue("Шо значит не получилось оформить! Я на вас в суд по правам человека подам!", isDisplayed);
+        assertTrue("Ой-вей! Окно заказа не появилось? Ну, таки, и я уже передумал...", isDisplayed);
     }
     // Тест заказа через кнопку в середине страницы
     @Test
@@ -57,6 +57,6 @@ public class TestSamokatOrdering extends CommonBaseTest {
                 .clickOrderButton()
                 .clickOrderButtonYes()
                 .isModalOrderWindowDisplayed();
-        assertTrue("Нэт окна заказа, нэ купил мапэд!", isDisplayed);
+        assertTrue("Нэт окна заказа, нэ купыл мапэд!", isDisplayed);
     }
 }

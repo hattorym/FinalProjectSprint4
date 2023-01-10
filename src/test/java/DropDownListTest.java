@@ -1,22 +1,8 @@
-import PageObjects.MainPage;
 import org.junit.Test;
+import pageObjects.MainPage;
 
-public class TestDropDownList extends CommonBaseTest {
+public class DropDownListTest extends CommonBaseTest {
 
-    // Тест соответствия текста в выпадающем списке
-    @Test
-    public void CheckDropDownListText() {
-
-        new MainPage(driver)
-        .openSite()
-        .clickCookieButton()
-        .scrollPageToList();
-
-        for (int i = 0; i < 8; i++) {
-        MainPage.clickAccordionArrow(i);
-        MainPage.checkTextInOpenPanel(expectedAnswersList[i], i);
-        }
-    }
     // Массив с текстом ожидаемых ответов
     private final String[] expectedAnswersList = new String[]{
             "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
@@ -28,4 +14,20 @@ public class TestDropDownList extends CommonBaseTest {
             "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.",
             "Да, обязательно. Всем самокатов! И Москве, и Московской области."
     };
+
+    // Тест соответствия текста в выпадающем списке
+    @Test
+    public void CheckDropDownListText() {
+
+        new MainPage(driver)
+                .openSite()
+                .clickCookieButton()
+                .scrollPageToEndOfList();
+
+        for (int i = 0; i < 8; i++) {
+            MainPage.clickQuestionArrow(i);
+            MainPage.checkTextInOpenPanel(expectedAnswersList[i], i);
+        }
+    }
+
 }

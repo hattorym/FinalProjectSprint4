@@ -28,16 +28,14 @@ public class CommonBaseTest {
 //        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
 //        WebDriverManager.firefoxdriver().setup();
 //        driver = new FirefoxDriver(options);
-//
-//        EdgeOptions options = new EdgeOptions();
-//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-//        WebDriverManager.edgedriver().setup();
-//        driver = new EdgeDriver(options);
 
-        OperaOptions options = new OperaOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        WebDriverManager.operadriver().setup();
-        driver = new OperaDriver(options);
+          WebDriverManager.edgedriver().setup();
+          driver = new EdgeDriver();
+
+//        OperaOptions options = new OperaOptions();
+//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+//        WebDriverManager.operadriver().setup();
+//        driver = new OperaDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
