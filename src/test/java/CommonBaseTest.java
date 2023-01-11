@@ -24,6 +24,19 @@ public class CommonBaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
 
+//        FirefoxOptions options = new FirefoxOptions();
+//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver(options);
+
+//        OperaOptions options = new OperaOptions();
+//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+//        WebDriverManager.operadriver().setup();
+//        driver = new OperaDriver(options);
+
+//        WebDriverManager.edgedriver().setup();
+//        driver = new EdgeDriver();
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }

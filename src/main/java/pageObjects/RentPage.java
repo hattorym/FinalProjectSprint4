@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class RentPage {
     WebDriver driver;
 
-/** Локаторы данных страницы "Про аренду" */
-/** Локатор поля даты начала аренды */
+/** <b>Локаторы данных страницы "Про аренду"</b>
+<p>Локатор поля даты начала аренды */
     private final By rentalDateField = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
 /** Локатор поля срока аренды */
     private final By rentalTimeField = By.className("Dropdown-placeholder");
@@ -26,13 +26,18 @@ public class RentPage {
     private final By orderButtonYes = By.xpath(".//*[@id='root']/div/div[2]/div[5]/div[2]/button[2]");
 /** Локатор модального окна*/
     private final By modalOrderWindow = By.xpath(".//div[contains(@class, 'Order_ModalHeader')]");
+    /** Модальное окно "Заказ Оформлен"*/
+    public boolean isModalOrderWindowDisplayed() {
+        return driver.findElement(modalOrderWindow).isDisplayed();
+    }
 
 /** Конструктор класса */
     public RentPage(WebDriver driver) {
         this.driver = driver;
     }
 
-/** Ввод даты доставки*/
+/** <b>Методы для работы с элементами страницы аренды</b>
+ * <p>Ввод даты доставки*/
     public RentPage sendRentalDate(String date) {
         driver.findElement(rentalDateField).sendKeys(date);
         driver.findElement(rentalDateField).sendKeys(Keys.ENTER);
@@ -74,9 +79,5 @@ public class RentPage {
     public RentPage clickOrderButtonYes() {
         driver.findElement(orderButtonYes).click();
         return this;
-    }
-/** Модальное окно "Заказ Оформлен"*/
-    public boolean isModalOrderWindowDisplayed() {
-        return driver.findElement(modalOrderWindow).isDisplayed();
     }
 }

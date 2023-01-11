@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 
-/** Элементы страницы оформления заказа сайта: */
+/** <b>Элементы страницы оформления заказа сайта:</b> */
 public class OrderPage {
     private final WebDriver driver;
 
@@ -22,24 +22,22 @@ public class OrderPage {
     private final By deliveryMetroStation = By.xpath(".//input[@placeholder='* Станция метро']");
 
 /** Локатор поля "Телефон: на него позвонит курьер" */
-    private f/**inal By deliveryClientPhoneNumber = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private final By deliveryClientPhoneNumber = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
 
 /** Локатор кнопки "Далее" */
     private final By NextButton = By.xpath(".//button[(@class ='Button_Button__ra12g Button_Middle__1CSJM' and text()='Далее')]");
-
 
  /** Конструктор класса */
     public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
 
-/** Методы для работы с элементами страницы заказа */
-/** Ввод имени клиента */
+/** <b>Методы для работы с элементами страницы заказа</b>
+ * <p>Ввод имени клиента */
     public OrderPage sendClientFirstName(String firstName) {
         driver.findElement(clientFirstName).sendKeys(firstName);
         return this;
     }
-
  /** Ввод фамилии клиента */
     public OrderPage sendClientLastName(String lastName) {
         driver.findElement(clientLastName).sendKeys(lastName);

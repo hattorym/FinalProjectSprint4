@@ -35,7 +35,7 @@ public class DropDownListParamTest extends CommonBaseTest {
                 {"accordion__heading-7", "accordion__panel-7", "Да, обязательно. Всем самокатов! И Москве, и Московской области."},
         };
     }
-/** Тест соответствия текста в выпадающем списке*/
+/** Сравнение текста ответа с эталонным текстом*/
     @Test
     public void dropDownListTest() {
         new MainPage(driver)
@@ -43,7 +43,7 @@ public class DropDownListParamTest extends CommonBaseTest {
                 .clickCookieButton()
                 .scrollPageToEndOfList()
                 .clickQuestionButton(questionLocator);
-        /** Сравнение текста ответа с эталонным текстом*/
+
         new MainPage(driver);
         String ActualAnswerText = driver.findElement(By.id(answerLocator)).getText();
         assertEquals("Текст в ответе не соответствует ожидаемому тексту.", answerText, ActualAnswerText);

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
-/** Элементы главной страницы сайта: */
+/** <b>Элементы главной страницы сайта:</b> */
 public class MainPage {
     public MainPage(WebDriver driver) {
         MainPage.driver = driver;
@@ -18,40 +18,13 @@ public class MainPage {
     private static WebDriver driver;
 
     /** Локатор кнопки "да все привыкли" сообщения о кукисах */
-    private By cookieButton = By.id("rcc-confirm-button");
+    private final By cookieButton = By.id("rcc-confirm-button");
 
     /** Локатор Кнопки заказа в хэдере сайта */
     private By headerOrderButton = By.className("Button_Button__ra12g");
 
     /** Локатор кнопки заказа в середине сайта */
     private By middleOrderButton = By.className("Button_Middle__1CSJM");
-
-
-    /** Методы для работы с элементами главной страницы */
-
-    /** Открыть сайт */
-    public final MainPage openSite() {
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-        return this;
-    }
-
-    /** Кликнуть по кнопке "да все привыкли" в сообщении о кукисах */
-    public MainPage clickCookieButton() {
-        driver.findElement(cookieButton).click();
-        return this;
-    }
-
-    /** Кликнуть по кнопке заказа в хэдере сайта */
-    public MainPage clickHeaderOrderButton() {
-        driver.findElement(headerOrderButton).click();
-        return this;
-    }
-
-    /** Кликнуть по кнопке заказа в середине сайта */
-    public MainPage clickMiddleOrderButton() {
-        driver.findElement(middleOrderButton).click();
-        return this;
-    }
 
     /** Массив локаторов кнопок с вопросами */
     private static final String[] dropDownQuestionsArray = new String[]{
@@ -74,6 +47,32 @@ public class MainPage {
             "accordion__panel-5",
             "accordion__panel-6",
             "accordion__panel-7"};
+
+    /** <b>Методы для работы с элементами главной страницы.</b>
+     *
+     *<p> Открыть сайт */
+    public final MainPage openSite() {
+        driver.get("https://qa-scooter.praktikum-services.ru/");
+        return this;
+    }
+
+    /** Кликнуть по кнопке "да все привыкли" в сообщении о кукисах */
+    public MainPage clickCookieButton() {
+        driver.findElement(cookieButton).click();
+        return this;
+    }
+
+    /** Кликнуть по кнопке заказа в хэдере сайта */
+    public MainPage clickHeaderOrderButton() {
+        driver.findElement(headerOrderButton).click();
+        return this;
+    }
+
+    /** Кликнуть по кнопке заказа в середине сайта */
+    public MainPage clickMiddleOrderButton() {
+        driver.findElement(middleOrderButton).click();
+        return this;
+    }
 
     /** Прокрутка главной страницы до последнего элемента списка */
     public MainPage scrollPageToEndOfList() {
