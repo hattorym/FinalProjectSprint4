@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 public class SamokatOrderingTest extends CommonBaseTest {
 
-    // Тест заказа через кнопку в хэдере
+/** Тест заказа через кнопку в хэдере*/
     @Test
     public void samokatOrderingByHeaderOrderButton() {
         new MainPage(driver)
@@ -33,7 +33,7 @@ public class SamokatOrderingTest extends CommonBaseTest {
                 .isModalOrderWindowDisplayed();
         assertTrue("Ой-вей! Окно заказа не появилось? Ну, таки, и я уже передумал...", isDisplayed);
     }
-    // Тест заказа через кнопку в середине страницы
+/** Тест заказа через кнопку в середине страницы */
     @Test
     public void samokatOrderingByMiddleOrderButton() {
         new MainPage(driver)

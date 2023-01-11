@@ -3,7 +3,7 @@ import pageObjects.MainPage;
 
 public class DropDownListTest extends CommonBaseTest {
 
-    // Массив с текстом ожидаемых ответов
+    /** Массив с текстом ожидаемых ответов */
     private final String[] expectedAnswersList = new String[]{
             "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
             "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.",
@@ -15,7 +15,7 @@ public class DropDownListTest extends CommonBaseTest {
             "Да, обязательно. Всем самокатов! И Москве, и Московской области."
     };
 
-    // Тест соответствия текста в выпадающем списке
+    /** Тест соответствия текста в выпадающем списке */
     @Test
     public void CheckDropDownListText() {
 

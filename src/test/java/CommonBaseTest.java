@@ -16,31 +16,18 @@ import java.util.concurrent.TimeUnit;
 public class CommonBaseTest {
     WebDriver driver;
 
-    // Выбор браузера для прогона тестов
+/** Выбор браузера для прогона тестов*/
     @Before
     public void setUp() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver(options);
-//
-//        FirefoxOptions options = new FirefoxOptions();
-//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-//        WebDriverManager.firefoxdriver().setup();
-//        driver = new FirefoxDriver(options);
-
-          WebDriverManager.edgedriver().setup();
-          driver = new EdgeDriver();
-
-//        OperaOptions options = new OperaOptions();
-//        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-//        WebDriverManager.operadriver().setup();
-//        driver = new OperaDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
-    // Закрыть браузер
+/** Закрыть браузер*/
     @After
     public void tearDown() {
         if(driver != null){
